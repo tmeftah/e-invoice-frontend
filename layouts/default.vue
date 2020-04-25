@@ -72,48 +72,48 @@
 </template>
 
 <script>
-  export default {
-    data() {
-      return {
-        clipped: false,
-        drawer: true,
-        fixed: false,
-        mini: true,
-        expandOnHover: true,
-        items: [
-          {
-            icon: 'mdi-view-dashboard',
-            title: 'Home',
-            to: '/'
-          },
-          {
-            icon: 'mdi-account-multiple',
-            title: 'Customers',
-            to: '/customers'
-          },
+export default {
+  data() {
+    return {
+      clipped: false,
+      drawer: false,
+      fixed: false,
+      mini: true,
+      expandOnHover: true,
+      items: [
+        {
+          icon: 'mdi-view-dashboard',
+          title: 'Home',
+          to: '/'
+        },
+        {
+          icon: 'mdi-account-multiple',
+          title: 'Customers',
+          to: '/customers'
+        },
 
-          {
-            icon: 'mdi-chat-alert-outline',
-            title: 'Quotes',
-            to: '/quotes'
-          },
-          {
-            icon: 'mdi-file-document',
-            title: 'Invoices',
-            to: '/invoices'
-          },
-          {
-            icon: 'mdi-cash-multiple',
-            title: 'Payments',
-            to: '/payments'
-          },
-          {
-            icon: '  mdi-package-variant-closed',
-            title: 'Products',
-            to: '/Products'
-          }
-        ]
-      }
+        {
+          icon: 'mdi-chat-alert-outline',
+          title: 'Quotes',
+          to: '/quotes'
+        },
+        {
+          icon: 'mdi-file-document',
+          title: 'Invoices',
+          to: '/invoices'
+        },
+        {
+          icon: 'mdi-cash-multiple',
+          title: 'Payments',
+          to: '/payments'
+        },
+        {
+          icon: '  mdi-package-variant-closed',
+          title: 'Products',
+          to: '/Products'
+        }
+      ]
     }
   }
+}
 </script>

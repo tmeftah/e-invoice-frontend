@@ -1,15 +1,6 @@
 <template>
   <div>
     <div v-if="$store.state.auth">
-      <v-snackbar
-        top
-        :timeout="timeout"
-        v-model="snackbar"
-        color="success"
-        :absolute="absolute"
-        >{{ text }}</v-snackbar
-      >
-
       <p>
         You are authenticated. You can see the
         <NuxtLink to="/products"> products page</NuxtLink>!

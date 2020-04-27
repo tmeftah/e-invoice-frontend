@@ -41,7 +41,7 @@ export default {
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: ['~/plugins/notifier'],
+  plugins: ['~/plugins/notifier', '~/plugins/i18n', '~/plugins/country-flag'],
   /*
    ** Nuxt.js dev-modules
    */
@@ -50,10 +50,46 @@ export default {
    ** Nuxt.js modules
    */
   modules: [
-    // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
     '@nuxtjs/pwa',
-    '@nuxtjs/auth'
+    '@nuxtjs/auth',
+
+    [
+      'nuxt-i18n',
+      {
+        baseUrl: 'http://localhost:3000',
+        seo: false, // see doc and layouts
+
+        locales: [
+          {
+            name: 'Deutsch',
+            code: 'de',
+            iso: 'de-DE',
+            country: 'de',
+            file: 'de-DE.json'
+          },
+          {
+            name: 'English',
+            code: 'en',
+            iso: 'en-US',
+            country: 'us',
+            file: 'en-US.json'
+          }
+        ],
+        detectBrowserLanguage: {
+          useCookie: true,
+          cookieKey: 'lang'
+        },
+        strategy: 'prefix_except_default',
+        vueI18n: {
+          fallbackLocale: 'de'
+        },
+
+        langDir: 'lang/',
+        defaultLocale: 'de',
+        lazy: true
+      }
+    ]
   ],
   /*
    ** Axios module configuration
@@ -84,10 +120,10 @@ export default {
     redirect: {
       login: '/login',
       home: '/',
-      logout: '/'
+      logout: '/login'
     },
     resetOnError: true,
-    plugins: ['~/plugins/axios']
+    plugins: ['~/plugins/axios', '~/plugins/auth']
   },
   /*
    ** vuetify module configuration

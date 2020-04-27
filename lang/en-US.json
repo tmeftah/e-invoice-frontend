@@ -1,0 +1,22 @@
+{
+  "login_msg": " Sign in to access the app",
+  "login_btn": "Login",
+  "SideBar": {
+    "customer": "customer",
+    "home": "home",
+    "quotes": "quotes",
+    "invoices": "invoices",
+    "payments": "payments",
+    "products": "products",
+    "settings": "settings"
+  },
+  "paymentPage": {
+    "name": "payment page"
+  },
+  "close": "close",
+  "select_language": "languages",
+  "search": "search",
+  "username": "username",
+  "password": "password",
+  "Logout": "logout"
+}

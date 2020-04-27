@@ -1,12 +1,17 @@
 <template>
   <v-layout align-center justify-center>
     <v-flex xs12 sm8 md4>
-      <h1 class="title mb-3">Sign in to access the app</h1>
+      <h1 class="title mb-3">{{ $t('login_msg') }}</h1>
       <v-spacer></v-spacer>
       <v-form method="post" @submit.prevent="login">
-        <v-text-field v-model="username" label="username" required></v-text-field>
-        <v-text-field v-model="password" label="password" required></v-text-field>
-        <v-btn color="success" type="submit">Login</v-btn>
+        <v-text-field v-model="username" :label="$t('username')"></v-text-field>
+        <v-text-field
+          v-model="password"
+          :label="$t('password')"
+          type="password"
+          required
+        ></v-text-field>
+        <v-btn color="success" type="submit">{{ $t('login_btn') }}</v-btn>
       </v-form>
     </v-flex>
   </v-layout>
@@ -17,13 +22,18 @@
   const Cookie = process.client ? require('js-cookie') : undefined
 
   export default {
-    layout: 'login',
+    layout: 'default',
     auth: 'guest',
     data() {
       return {
         username: 'admin',
         password: 'demo',
         error: null
+      }
+    },
+    computed: {
+      availableLocales() {
+        return this.$i18n.locales.filter(i => i.code !== this.$i18n.locale)
       }
     },
     methods: {
@@ -47,7 +57,7 @@
               'Bearer ' + resp.data.access_token
             )
             this.$store.commit('firtsLogin', true)
-            this.$router.push('/')
+            this.$router.push(this.localePath('/'))
           })
           .catch(error => {
             if (!error.response) {

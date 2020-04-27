@@ -1,3 +1,3 @@
 <template>
-  <div>payments page</div>
+  <div>{{$t('paymentPage.name')}}</div>
 </template>

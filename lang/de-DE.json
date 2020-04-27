@@ -1,0 +1,22 @@
+{
+  "login_msg": "Melden Sie sich an, um auf die App zuzugreifen",
+  "login_btn": "Anmeldung",
+  "SideBar": {
+    "customer": "Kunde",
+    "home": "Dashboard",
+    "quotes": "Angebot",
+    "invoices": "Rechnung",
+    "payments": "Zahlung",
+    "products": "Produkte",
+    "settings": "Einstellungen"
+  },
+  "paymentPage": {
+    "name": "Zahlung Seite"
+  },
+  "close": "Schließen",
+  "select_language": "Sprachen",
+  "search": "Suche",
+  "username": "Benutzername",
+  "password": "Passwort",
+  "Logout": "Abmelden"
+}

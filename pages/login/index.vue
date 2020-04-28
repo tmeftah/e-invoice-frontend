@@ -18,7 +18,6 @@
 </template>
 
 <script>
-  import { state } from '../store'
   const Cookie = process.client ? require('js-cookie') : undefined
 
   export default {

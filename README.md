@@ -1,6 +1,6 @@
 # e-invoice-frontend
 
-> My incredible Nuxt.js project
+> frontend for e-invoice api
 
 ## Build Setup
 

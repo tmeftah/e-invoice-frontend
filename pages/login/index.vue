@@ -1,7 +1,7 @@
 <template>
   <v-layout align-center justify-center>
     <v-flex xs12 sm8 md4>
-      <h1 class="title mb-3">{{ $t('login_msg') }}</h1>
+      <h1 class="mb-3">{{ $t('login_msg') }}</h1>
       <v-spacer></v-spacer>
       <v-form method="post" @submit.prevent="login">
         <v-text-field v-model="username" :label="$t('username')"></v-text-field>

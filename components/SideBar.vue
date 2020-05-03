@@ -2,11 +2,12 @@
   <div>
     <v-navigation-drawer
       v-model="drawer"
-      :clipped="$vuetify.breakpoint.lgAndUp"
       :mini-variant.sync="mini"
       :expand-on-hover="expandOnHover"
       app
+      fixed
       v-if="isAuthenticated"
+      width="200px"
     >
       <v-list>
         <v-list-item
@@ -14,13 +15,15 @@
           :key="i"
           :to="localePath(item.to)"
           router
-          exact
         >
           <v-list-item-action>
             <v-icon>{{ item.icon }}</v-icon>
           </v-list-item-action>
           <v-list-item-content>
-            <v-list-item-title v-text="$t(item.title)" />
+            <v-list-item-title
+              class="text-capitalize"
+              v-text="$t(item.title)"
+            />
           </v-list-item-content>
         </v-list-item>
       </v-list>
@@ -50,10 +53,12 @@
         </v-list>
       </template>
     </v-navigation-drawer>
-    <v-app-bar :clipped-left="$vuetify.breakpoint.lgAndUp" app dense>
+    <v-app-bar app dense flat>
       <template v-if="isAuthenticated">
         <v-toolbar-title style="width: 300px" class="ml-0 pl-2">
-          <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
+          <v-app-bar-nav-icon
+            @click.stop="drawer = !drawer"
+          ></v-app-bar-nav-icon>
           <span class="hidden-sm-and-down">e-invoice</span>
         </v-toolbar-title>
         <!-- <v-text-field
@@ -72,68 +77,70 @@
         </v-toolbar-title>
       </template>
       <v-spacer></v-spacer>
+
       <LanguageSwitch />
     </v-app-bar>
   </div>
 </template>
 
 <script>
-  import { mapGetters } from 'vuex'
-  import LanguageSwitch from '@/components/LanguageSwitch.vue'
-  export default {
-    name: 'SideBar',
-    components: {
-      LanguageSwitch
-    },
-    computed: {
-      ...mapGetters(['isAuthenticated', 'loggedInUser'])
-    },
+import { mapGetters } from 'vuex'
+import LanguageSwitch from '@/components/LanguageSwitch.vue'
+export default {
+  name: 'SideBar',
+  components: {
+    LanguageSwitch
+  },
+  computed: {
+    ...mapGetters(['isAuthenticated', 'loggedInUser'])
+  },
 
-    data() {
-      return {
-        clipped: false,
-        drawer: null,
-        mini: true,
-        expandOnHover: true,
-        items: [
-          {
-            icon: 'mdi-view-dashboard',
-            title: 'SideBar.home',
-            to: '/'
-          },
-          {
-            icon: 'mdi-account-multiple',
-            title: 'SideBar.customer',
-            to: 'customers'
-          },
+  data() {
+    return {
+      clipped: false,
+      drawer: null,
+      mini: false,
+      expandOnHover: false,
+      items: [
+        {
+          icon: 'mdi-view-dashboard',
+          title: 'SideBar.home',
+          to: '/'
+        },
+        {
+          icon: 'mdi-account-multiple',
+          title: 'SideBar.customers',
+          to: 'customers'
+        },
 
-          {
-            icon: 'mdi-chat-alert-outline',
-            title: 'SideBar.quotes',
-            to: 'quotes'
-          },
-          {
-            icon: 'mdi-file-document',
-            title: 'SideBar.invoices',
-            to: 'invoices'
-          },
-          {
-            icon: 'mdi-cash-multiple',
-            title: 'SideBar.payments',
-            to: 'payments'
-          },
-          {
-            icon: 'mdi-package-variant-closed',
-            title: 'SideBar.products',
-            to: 'products'
-          }
-        ]
-      }
-    },
-    methods: {
-      async logout() {
-        await this.$auth.logout()
-      }
+        {
+          icon: 'mdi-chat-alert-outline',
+          title: 'SideBar.quotes',
+          to: 'quotes'
+        },
+        {
+          icon: 'mdi-file-document',
+          title: 'SideBar.invoices',
+          to: 'invoices'
+        },
+        {
+          icon: 'mdi-cash-multiple',
+          title: 'SideBar.payments',
+          to: 'payments'
+        },
+        {
+          icon: 'mdi-package-variant-closed',
+          title: 'SideBar.products',
+          to: 'products'
+        }
+      ]
+    }
+  },
+
+  methods: {
+    async logout() {
+      await this.$auth.logout()
     }
   }
+}
 </script>

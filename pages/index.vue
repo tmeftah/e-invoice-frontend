@@ -3,18 +3,22 @@
     <v-row align="stretch">
       <v-col>
         <v-card height="100%">
-          <v-card-title class="grey lighten-4 subtitle-2 py-2">Recent Activity</v-card-title>
+          <v-card-title class=" py-2">Recent Activity</v-card-title>
           <v-list dense>
             <v-list-item-group>
               <v-list-item>
                 <v-list-item-content>
-                  <v-list-item-title>20 hours ago — Invoice modified</v-list-item-title>
+                  <v-list-item-title
+                    >20 hours ago — Invoice modified</v-list-item-title
+                  >
                 </v-list-item-content>
               </v-list-item>
 
               <v-list-item>
                 <v-list-item-content>
-                  <v-list-item-title>20 hours ago — Invoice created for xxx</v-list-item-title>
+                  <v-list-item-title
+                    >20 hours ago — Invoice created for xxx</v-list-item-title
+                  >
                 </v-list-item-content>
               </v-list-item>
             </v-list-item-group>
@@ -23,7 +27,7 @@
       </v-col>
       <v-col>
         <v-card height="100%">
-          <v-card-title class="grey lighten-4 subtitle-2 py-2">Overview</v-card-title>
+          <v-card-title class=" py-2">Overview</v-card-title>
           <v-list dense>
             <v-list-item>
               <v-list-item-content>
@@ -72,10 +76,10 @@
     <v-row align="stretch">
       <v-col>
         <v-card height="100%">
-          <v-card-title
-            class="grey lighten-4 subtitle-2 py-2"
-          >Invoiced / Received (Jan 01 2020 - Apr 28 2020)</v-card-title>
-          <v-sheet color="orange lighten-2" height="300px" tile></v-sheet>
+          <v-card-title class=" py-2"
+            >Invoiced / Received (Jan 01 2020 - Apr 28 2020)</v-card-title
+          >
+          <v-sheet height="300px" tile></v-sheet>
         </v-card>
       </v-col>
     </v-row>
@@ -83,18 +87,18 @@
 </template>
 
 <script>
-  export default {
-    middleware: 'auth',
-    data: () => ({
-      timeout: 2000,
-      text: "I'm a snackbar",
-      tt: true,
-      absolute: true
-    }),
-    computed: {
-      snackbar() {
-        return this.$store.state.first_login
-      }
+export default {
+  middleware: 'auth',
+  data: () => ({
+    timeout: 2000,
+    text: "I'm a snackbar",
+    tt: true,
+    absolute: true
+  }),
+  computed: {
+    snackbar() {
+      return this.$store.state.first_login
     }
   }
+}
 </script>

@@ -1,5 +1,7 @@
 # e-invoice-frontend
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/5f11c085-fc50-44bf-8980-acb3240cca1a/deploy-status)](https://app.netlify.com/sites/e-invoice/deploys)
+
 > frontend for e-invoice api
 
 ## Build Setup

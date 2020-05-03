@@ -2,7 +2,7 @@
   "login_msg": "Melden Sie sich an, um auf die App zuzugreifen",
   "login_btn": "Anmeldung",
   "SideBar": {
-    "customer": "Kunde",
+    "customers": "Kunden",
     "home": "Dashboard",
     "quotes": "Angebot",
     "invoices": "Rechnung",

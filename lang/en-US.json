@@ -2,7 +2,7 @@
   "login_msg": " Sign in to access the app",
   "login_btn": "Login",
   "SideBar": {
-    "customer": "customer",
+    "customers": "customers",
     "home": "home",
     "quotes": "quotes",
     "invoices": "invoices",

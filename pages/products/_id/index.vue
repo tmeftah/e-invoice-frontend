@@ -26,7 +26,6 @@ export default {
   methods: {
     async getDataFromApi() {
       this.loading = true
-      console.log(this.$route.params.id)
       let data = (await this.$axios.get('products/' + this.$route.params.id))
         .data
 

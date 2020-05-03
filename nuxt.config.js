@@ -17,7 +17,14 @@ export default {
         content: process.env.npm_package_description || ''
       }
     ],
-    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
+    link: [
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      {
+        rel: 'stylesheet',
+        href:
+          'https://fonts.googleapis.com/css?family=Roboto|Source Sans Serif|Krub'
+      }
+    ]
   },
 
   router: {
@@ -37,7 +44,7 @@ export default {
   /*
    ** Global CSS
    */
-  css: [],
+  // css: ['~/assets/main.css'],
   /*
    ** Plugins to load before mounting the App
    */
@@ -57,7 +64,7 @@ export default {
     [
       'nuxt-i18n',
       {
-        baseUrl: 'http://localhost:3000',
+        baseUrl: 'https://sudtechnics.pythonanywhere.com',
         seo: false, // see doc and layouts
 
         locales: [
@@ -96,7 +103,7 @@ export default {
    ** See https://axios.nuxtjs.org/options
    */
   axios: {
-    baseURL: 'http://localhost:5000/'
+    baseURL: 'https://sudtechnics.pythonanywhere.com/'
   },
   auth: {
     localStorage: false,

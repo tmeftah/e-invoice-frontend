@@ -15,6 +15,7 @@
           :key="i"
           :to="localePath(item.to)"
           router
+          :exact="item.exact"
         >
           <v-list-item-action>
             <v-icon>{{ item.icon }}</v-icon>
@@ -105,33 +106,39 @@ export default {
         {
           icon: 'mdi-view-dashboard',
           title: 'SideBar.home',
-          to: '/'
+          to: '/',
+          exact: true
         },
         {
           icon: 'mdi-account-multiple',
           title: 'SideBar.customers',
-          to: 'customers'
+          to: 'customers',
+          exact: false
         },
 
         {
           icon: 'mdi-chat-alert-outline',
           title: 'SideBar.quotes',
-          to: 'quotes'
+          to: 'quotes',
+          exact: false
         },
         {
           icon: 'mdi-file-document',
           title: 'SideBar.invoices',
-          to: 'invoices'
+          to: 'invoices',
+          exact: false
         },
         {
           icon: 'mdi-cash-multiple',
           title: 'SideBar.payments',
-          to: 'payments'
+          to: 'payments',
+          exact: false
         },
         {
           icon: 'mdi-package-variant-closed',
           title: 'SideBar.products',
-          to: 'products'
+          to: 'products',
+          exact: false
         }
       ]
     }

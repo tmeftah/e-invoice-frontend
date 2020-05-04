@@ -1,12 +1,12 @@
 <template>
-  <v-app style="font-family: Roboto;" id="inspire">
+  <v-app style="font-family: Roboto;" id="inspire" dark>
     <SideBar />
 
     <v-content style="background-color:#000839;">
       <v-container v-if="isAuthenticated">
         <nuxt />
       </v-container>
-      <v-container v-else fluid fill-height>
+      <v-container v-else fluid fill-height style="background-color:#000839;">
         <nuxt />
       </v-container>
     </v-content>
@@ -22,7 +22,7 @@
   export default {
     name: 'DefaultLayout',
     data: () => ({
-      goDark: false
+      goDark: true
     }),
     components: {
       SideBar,
@@ -36,7 +36,7 @@
       if (theme) {
         if (theme == 'true') {
           this.$vuetify.theme.dark = true
-        } else this.$vuetify.theme.dark = false
+        } else this.$vuetify.theme.dark = true
         this.goDark = this.$vuetify.theme.dark
       }
     }

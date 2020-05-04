@@ -1,13 +1,13 @@
 <template>
-  <v-card color="#005082">
+  <v-card>
     <v-card-title primary-title style="background-color:#005082">
       <v-tabs
         v-model="tab"
-        dark
         grow
         centered
         background-color="#005082"
         show-arrows
+        color="white"
       >
         <v-tab>Information</v-tab>
         <v-tab>Another Selection</v-tab>
@@ -28,6 +28,7 @@
                 filled
                 rounded
                 dense
+                light
                 background-color="white"
               ></v-text-field>
               <v-text-field
@@ -36,6 +37,7 @@
                 filled
                 rounded
                 dense
+                light
                 background-color="white"
               ></v-text-field>
 
@@ -46,6 +48,7 @@
                 filled
                 rounded
                 dense
+                light
                 background-color="white"
               ></v-text-field>
             </v-col>
@@ -57,6 +60,7 @@
                 filled
                 rounded
                 dense
+                light
                 background-color="white"
               ></v-select>
               <v-select
@@ -65,6 +69,7 @@
                 filled
                 rounded
                 dense
+                light
                 background-color="white"
               ></v-select>
               <v-text-field
@@ -74,6 +79,7 @@
                 filled
                 rounded
                 dense
+                light
                 background-color="white"
               ></v-text-field>
             </v-col>
@@ -86,6 +92,7 @@
                 filled
                 rounded
                 dense
+                light
                 background-color="white"
               ></v-text-field>
 
@@ -95,6 +102,7 @@
                 filled
                 rounded
                 dense
+                light
                 background-color="white"
               ></v-text-field>
 
@@ -104,6 +112,7 @@
                 filled
                 rounded
                 dense
+                light
                 background-color="white"
               ></v-text-field>
             </v-col>
@@ -115,6 +124,7 @@
                 filled
                 rounded
                 dense
+                light
                 background-color="white"
               ></v-select>
               <v-text-field
@@ -123,6 +133,7 @@
                 filled
                 rounded
                 dense
+                light
                 background-color="white"
               ></v-text-field>
               <v-text-field
@@ -131,6 +142,7 @@
                 filled
                 rounded
                 dense
+                light
                 background-color="white"
               ></v-text-field>
             </v-col>
@@ -143,6 +155,7 @@
                 filled
                 rounded
                 dense
+                light
                 background-color="white"
               ></v-text-field>
 
@@ -152,6 +165,7 @@
                 filled
                 rounded
                 dense
+                light
                 background-color="white"
               ></v-text-field>
             </v-col>
@@ -162,6 +176,7 @@
                 filled
                 rounded
                 dense
+                light
                 background-color="white"
               ></v-text-field>
               <v-textarea
@@ -171,6 +186,7 @@
                 filled
                 rounded
                 dense
+                light
                 auto-grow
                 background-color="white"
               >""</v-textarea>

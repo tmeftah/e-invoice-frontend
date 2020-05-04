@@ -7,7 +7,7 @@
         centered
         background-color="#005082"
         show-arrows
-        color="white"
+        color="#ffb340"
       >
         <v-tab>Information</v-tab>
         <v-tab>Another Selection</v-tab>
@@ -28,8 +28,8 @@
                 filled
                 rounded
                 dense
-                light
-                background-color="white"
+                background-color="#ffb340"
+                color="white"
               ></v-text-field>
               <v-text-field
                 v-model="lastname"
@@ -37,8 +37,8 @@
                 filled
                 rounded
                 dense
-                light
-                background-color="white"
+                background-color="#ffb340"
+                color="white"
               ></v-text-field>
 
               <v-text-field
@@ -48,8 +48,8 @@
                 filled
                 rounded
                 dense
-                light
-                background-color="white"
+                background-color="#ffb340"
+                color="white"
               ></v-text-field>
             </v-col>
 
@@ -60,8 +60,8 @@
                 filled
                 rounded
                 dense
-                light
-                background-color="white"
+                background-color="#ffb340"
+                color="white"
               ></v-select>
               <v-select
                 :items="['Englisch US', 'Deutsch', 'Arabic', 'French']"
@@ -69,8 +69,8 @@
                 filled
                 rounded
                 dense
-                light
-                background-color="white"
+                background-color="#ffb340"
+                color="white"
               ></v-select>
               <v-text-field
                 v-model="website"
@@ -79,8 +79,8 @@
                 filled
                 rounded
                 dense
-                light
-                background-color="white"
+                background-color="#ffb340"
+                color="white"
               ></v-text-field>
             </v-col>
           </v-row>
@@ -92,8 +92,8 @@
                 filled
                 rounded
                 dense
-                light
-                background-color="white"
+                background-color="#ffb340"
+                color="white"
               ></v-text-field>
 
               <v-text-field
@@ -102,8 +102,8 @@
                 filled
                 rounded
                 dense
-                light
-                background-color="white"
+                background-color="#ffb340"
+                color="white"
               ></v-text-field>
 
               <v-text-field
@@ -112,8 +112,8 @@
                 filled
                 rounded
                 dense
-                light
-                background-color="white"
+                background-color="#ffb340"
+                color="white"
               ></v-text-field>
             </v-col>
 
@@ -124,8 +124,8 @@
                 filled
                 rounded
                 dense
-                light
-                background-color="white"
+                background-color="#ffb340"
+                color="white"
               ></v-select>
               <v-text-field
                 v-model="website"
@@ -133,8 +133,8 @@
                 filled
                 rounded
                 dense
-                light
-                background-color="white"
+                background-color="#ffb340"
+                color="white"
               ></v-text-field>
               <v-text-field
                 v-model="website"
@@ -142,8 +142,8 @@
                 filled
                 rounded
                 dense
-                light
-                background-color="white"
+                background-color="#ffb340"
+                color="white"
               ></v-text-field>
             </v-col>
           </v-row>
@@ -155,8 +155,8 @@
                 filled
                 rounded
                 dense
-                light
-                background-color="white"
+                background-color="#ffb340"
+                color="white"
               ></v-text-field>
 
               <v-text-field
@@ -165,8 +165,8 @@
                 filled
                 rounded
                 dense
-                light
-                background-color="white"
+                background-color="#ffb340"
+                color="white"
               ></v-text-field>
             </v-col>
             <v-col cols="12" sm="6">
@@ -176,8 +176,8 @@
                 filled
                 rounded
                 dense
-                light
-                background-color="white"
+                background-color="#ffb340"
+                color="white"
               ></v-text-field>
               <v-textarea
                 name="input-7-1"
@@ -186,9 +186,9 @@
                 filled
                 rounded
                 dense
-                light
                 auto-grow
-                background-color="white"
+                background-color="#ffb340"
+                color="white"
               >""</v-textarea>
             </v-col>
           </v-row>

@@ -22,7 +22,7 @@
         <div
           v-for="client in clients"
           :key="client.name"
-          style="background-color:#ffae33; "
+          style="background-color:#ffb340; "
         >
           <v-row>
             <v-col cols="12" sm="9">

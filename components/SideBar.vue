@@ -2,12 +2,15 @@
   <div>
     <v-navigation-drawer
       v-model="drawer"
-      :mini-variant.sync="mini"
+      :permanent="$vuetify.breakpoint.smAndUp"
+      mini-variant
       :expand-on-hover="expandOnHover"
       app
       fixed
       v-if="isAuthenticated"
       width="200px"
+      color="#005082"
+      dark
     >
       <v-list>
         <v-list-item
@@ -21,10 +24,7 @@
             <v-icon>{{ item.icon }}</v-icon>
           </v-list-item-action>
           <v-list-item-content>
-            <v-list-item-title
-              class="text-capitalize"
-              v-text="$t(item.title)"
-            />
+            <v-list-item-title class="text-capitalize" v-text="$t(item.title)" />
           </v-list-item-content>
         </v-list-item>
       </v-list>
@@ -54,14 +54,18 @@
         </v-list>
       </template>
     </v-navigation-drawer>
-    <v-app-bar app dense flat>
+    <v-app-bar
+      app
+      dense
+      flat
+      class="d-flex d-sm-none"
+      hide-on-scroll
+      color="transparent"
+      dark
+    >
       <template v-if="isAuthenticated">
-        <v-toolbar-title style="width: 300px" class="ml-0 pl-2">
-          <v-app-bar-nav-icon
-            @click.stop="drawer = !drawer"
-          ></v-app-bar-nav-icon>
-          <span class="hidden-sm-and-down">e-invoice</span>
-        </v-toolbar-title>
+        <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
+
         <!-- <v-text-field
           flat
           dense
@@ -77,77 +81,74 @@
           <span class="hidden-sm-and-down">e-invoice</span>
         </v-toolbar-title>
       </template>
-      <v-spacer></v-spacer>
-
-      <LanguageSwitch />
     </v-app-bar>
   </div>
 </template>
 
 <script>
-import { mapGetters } from 'vuex'
-import LanguageSwitch from '@/components/LanguageSwitch.vue'
-export default {
-  name: 'SideBar',
-  components: {
-    LanguageSwitch
-  },
-  computed: {
-    ...mapGetters(['isAuthenticated', 'loggedInUser'])
-  },
+  import { mapGetters } from 'vuex'
+  import LanguageSwitch from '@/components/LanguageSwitch.vue'
+  export default {
+    name: 'SideBar',
+    components: {
+      LanguageSwitch
+    },
+    computed: {
+      ...mapGetters(['isAuthenticated', 'loggedInUser'])
+    },
 
-  data() {
-    return {
-      clipped: false,
-      drawer: null,
-      mini: false,
-      expandOnHover: false,
-      items: [
-        {
-          icon: 'mdi-view-dashboard',
-          title: 'SideBar.home',
-          to: '/',
-          exact: true
-        },
-        {
-          icon: 'mdi-account-multiple',
-          title: 'SideBar.customers',
-          to: 'customers',
-          exact: false
-        },
+    data() {
+      return {
+        clipped: false,
+        drawer: null,
+        mini: false,
+        expandOnHover: false,
+        items: [
+          {
+            icon: 'mdi-view-dashboard',
+            title: 'SideBar.home',
+            to: '/',
+            exact: true
+          },
+          {
+            icon: 'mdi-account-multiple',
+            title: 'SideBar.customers',
+            to: 'customers',
+            exact: false
+          },
 
-        {
-          icon: 'mdi-chat-alert-outline',
-          title: 'SideBar.quotes',
-          to: 'quotes',
-          exact: false
-        },
-        {
-          icon: 'mdi-file-document',
-          title: 'SideBar.invoices',
-          to: 'invoices',
-          exact: false
-        },
-        {
-          icon: 'mdi-cash-multiple',
-          title: 'SideBar.payments',
-          to: 'payments',
-          exact: false
-        },
-        {
-          icon: 'mdi-package-variant-closed',
-          title: 'SideBar.products',
-          to: 'products',
-          exact: false
-        }
-      ]
-    }
-  },
+          {
+            icon: 'mdi-chat-alert-outline',
+            title: 'SideBar.quotes',
+            to: 'quotes',
+            exact: false
+          },
+          {
+            icon: 'mdi-file-document',
+            title: 'SideBar.invoices',
+            to: 'invoices',
+            exact: false
+          },
+          {
+            icon: 'mdi-cash-multiple',
+            title: 'SideBar.payments',
+            to: 'payments',
+            exact: false
+          },
+          {
+            icon: 'mdi-package-variant-closed',
+            title: 'SideBar.products',
+            to: 'products',
+            exact: false
+          }
+        ]
+      }
+    },
 
-  methods: {
-    async logout() {
-      await this.$auth.logout()
+    methods: {
+      async logout() {
+        await this.$auth.logout()
+      }
     }
   }
-}
 </script>
